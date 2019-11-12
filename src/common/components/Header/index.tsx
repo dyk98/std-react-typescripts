@@ -16,9 +16,7 @@ class Header extends React.Component<IHomeProps, IHomeState> {
 
     public render() {
         return (
-            <HeaderWrapper>
-
-            </HeaderWrapper>
+            <HeaderWrapper/>
         );
     }
 }

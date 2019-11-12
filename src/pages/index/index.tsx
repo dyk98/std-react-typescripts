@@ -18,9 +18,7 @@ class Index extends React.Component<IHomeProps, IHomeState> {
 
     public render() {
         return (
-            <IndexWrapper>
-
-            </IndexWrapper>
+            <IndexWrapper/>
         );
     }
 }
