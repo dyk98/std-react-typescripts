@@ -1,9 +1,9 @@
 import * as React from 'react';
 // import { Link } from 'react-router-dom';
-import {Office} from './style';
 import {observer} from 'mobx-react'
 import officeUnder from '../../../assets/img/home/officeUnder.png'
 import office from '../../../assets/img/home/office.png'
+import './index.scss';
 
 interface IHomeProps {
 }
@@ -20,7 +20,7 @@ class Index extends React.Component<IHomeProps, IHomeState> {
 
     public render() {
         return (
-            <Office>
+            <div>
                 <div className='content'>
                     <div className='content_left'>
                         <div>
@@ -42,7 +42,7 @@ class Index extends React.Component<IHomeProps, IHomeState> {
                     </div>
                     <img src={office} className='content_right'/>
                 </div>
-            </Office>
+            </div>
         );
     }
 }

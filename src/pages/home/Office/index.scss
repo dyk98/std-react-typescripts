@@ -1,0 +1,20 @@
+.content{
+  width:1200px;
+  display:flex;
+  margin: 0 auto;
+  &_left{
+    width:564px;
+
+    &_under{
+      width:509px;
+      height:103px;
+      margin-top:82px;
+    }
+  }
+
+  &_right{
+    width:577px;
+    height:439px;
+    margin-left:70px;
+  }
+}

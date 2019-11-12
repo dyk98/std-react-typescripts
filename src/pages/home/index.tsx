@@ -20,6 +20,7 @@ class Index extends React.Component<IHomeProps, IHomeState> {
     public render() {
         return (
             <div>
+                {/*办公室*/}
                 <Office/>
             </div>
         );
