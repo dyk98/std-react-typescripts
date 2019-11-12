@@ -1,6 +1,8 @@
 import * as React from 'react';
 // import { Link } from 'react-router-dom';
-import {HeaderWrapper} from './style';
+// @ts-ignore
+import styles from './index.scss';
+import {observer} from 'mobx-react'
 
 interface IHomeProps {
 }
@@ -8,6 +10,7 @@ interface IHomeProps {
 interface IHomeState {
 }
 
+@observer
 class Header extends React.Component<IHomeProps, IHomeState> {
 
     constructor(props) {
@@ -16,7 +19,9 @@ class Header extends React.Component<IHomeProps, IHomeState> {
 
     public render() {
         return (
-            <HeaderWrapper/>
+            <div className={styles.header}>
+                <p>123</p>
+            </div>
         );
     }
 }
