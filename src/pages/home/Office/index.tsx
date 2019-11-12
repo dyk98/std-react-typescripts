@@ -3,7 +3,8 @@ import * as React from 'react';
 import {observer} from 'mobx-react'
 import officeUnder from '../../../assets/img/home/officeUnder.png'
 import office from '../../../assets/img/home/office.png'
-import './index.scss';
+// @ts-ignore
+import  styles from './index.scss';
 
 interface IHomeProps {
 }
@@ -21,8 +22,8 @@ class Index extends React.Component<IHomeProps, IHomeState> {
     public render() {
         return (
             <div>
-                <div className='content'>
-                    <div className='content_left'>
+                <div className={styles.content}>
+                    <div  className={styles.content_left}>
                         <div>
                             <div>办公室简介</div>
                             <div/>
@@ -38,9 +39,9 @@ class Index extends React.Component<IHomeProps, IHomeState> {
                             </div>
                         </div>
 
-                        <img src={officeUnder} className='content_left_under'/>
+                        <img src={officeUnder}  className={styles.content_left_under}/>
                     </div>
-                    <img src={office} className='content_right'/>
+                    <img src={office} className={styles.content_right}/>
                 </div>
             </div>
         );
