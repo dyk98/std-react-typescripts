@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import { Link } from 'react-router-dom';
-import {IndexWrapper} from './style';
+import './index.scss';
 import {observer} from 'mobx-react'
 import logo from "../../logo.svg";
 import Office from './Office'
@@ -20,22 +20,22 @@ class Index extends React.Component<IHomeProps, IHomeState> {
 
     public render() {
         return (
-            <IndexWrapper>
+            <div>
 
                 {/*dyk的header组件*/}
                 <div className='header'>
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">Welcome to React</h1>
+                    <header className='app_header'>
+                        <img src={logo} className='app_logo' alt="logo"/>
+                        <h1 className="app_title">Welcome to React</h1>
                     </header>
-                    <p className="App-intro">
+                    <p className="app_intro">
                         To get started, edit <code>src/App.tsx</code> and save to reload.
                     </p>
                 </div>
 
                 <Office/>
 
-            </IndexWrapper>
+            </div>
         );
     }
 }

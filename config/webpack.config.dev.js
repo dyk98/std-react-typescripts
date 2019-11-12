@@ -170,7 +170,46 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
+            test: [/\.css$/, /\.scss$/],
+            exclude: [/node_modules/],// 这里去排除node_modules，防止css modules影响到node_modules
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true, // 这里增加对css modules的支持
+                  localIdentName: '[name]__[local]__[hash:base64:5]' //这里增加对css modules的支持
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'), // 这里增加sass的支持
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+            ],
+          },
+          {
             test: /\.css$/,
+            exclude: [/src/], // 这里添加排除src，
             use: [
               require.resolve('style-loader'),
               {
