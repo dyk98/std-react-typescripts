@@ -1,21 +1,4 @@
 .header {
-
-  &_top {
-    height: 42px;
-    line-height: 42px;
-    display: flex;
-
-      &_text {
-        font-size:18px;
-        font-family:MicrosoftYaHei;
-        font-weight:400;
-        color:rgba(0,0,0,1);
-        opacity:0.8;
-      }
-  }
-
-  &_bottom {
-    height: 111px;
-  }
+  color: red;
 }
 

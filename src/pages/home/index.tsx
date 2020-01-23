@@ -1,8 +1,11 @@
 import * as React from 'react';
-// import { Link } from 'react-router-dom';
 import './index.scss';
 import {observer} from 'mobx-react'
-import Office from './Office'
+import Header from "../../common/components/Header";
+import Demo from './Demo'
+import TYPE from "../../TYPE";
+import {IHomeStoreClassType} from "../../stores/home/homeType";
+import {homeContainer} from "../../stores/home/homeInversify";
 
 interface IHomeProps {
 }
@@ -13,15 +16,18 @@ interface IHomeState {
 @observer
 class Index extends React.Component<IHomeProps, IHomeState> {
 
+    protected homeStore: IHomeStoreClassType = homeContainer.get<IHomeStoreClassType>(TYPE.IHomeType);
+
     constructor(props) {
         super(props);
     }
 
     public render() {
+        const { num, addNum, reduceNum } = this.homeStore
         return (
             <div>
-                {/*办公室*/}
-                <Office/>
+                <Header />
+                <Demo num={num} onClickAdd={addNum} onClickReduce={reduceNum} />
             </div>
         );
     }

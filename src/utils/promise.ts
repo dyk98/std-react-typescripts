@@ -1,6 +1,4 @@
 import axios from 'axios';
-import {message} from 'antd';
-// import { userStore } from '../store/userStore';
 
 export const MethodType = {
     GET: 'GET',
@@ -21,7 +19,7 @@ export const requestToken = (api, method = MethodType.GET, params = {}) => {
         axios({
             url: `${api}`,
             method,
-            [data    ]: params,
+            [data]: params,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
                 'Content-Type': 'application/json',
@@ -39,7 +37,6 @@ export const requestToken = (api, method = MethodType.GET, params = {}) => {
         )
             .catch(error => {
                 console.log(error);
-                message.error(typeof error.response.data === 'string' ? error.response.data : JSON.stringify(error.response.data));
                 reject(error);
                 if (error.response.status === 403) {
                     // 返回403无权限则重新发起登录流程
